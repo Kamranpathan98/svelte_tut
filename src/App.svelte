@@ -14,10 +14,16 @@
 </script>
 
 <main>
+	<p>{@html htmlstring}</p>
 	<h1>Hello {name} your age is {age} and the number is {number}!</h1>
 	<button on:click={addNumber}>Add Number</button>
 	<h3>{textString} : {count}</h3>
-	<p>{@html htmlstring}</p>
+	<!-- This is conditional rendering -->
+	{#if  count > 0}
+	<h2>The count is greater than zero</h2>
+	{:else}
+	<h2>The count is zero and please hit the Add Number Button above</h2>
+	{/if}
 </main>
 
 <style>
@@ -31,7 +37,7 @@
 	h1 {
 		color: #ff3e00;
 		text-transform: uppercase;
-		font-size: 4em;
+		font-size: 2em;
 		font-weight: 100;
 	}
 
