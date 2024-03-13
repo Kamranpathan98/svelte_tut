@@ -9,6 +9,13 @@
   const htmlstring =
     "<b>This is bold text in html and we can bind it using @html</b>";
 
+  const nameList = [
+    {first: "Virat", last: "Kohli"},
+    {first: "Rohit", last: "Sharma"},
+    {first: "Suresh", last: "Raina"},
+    {first: "Yuvraj", last: "Singh"}
+  ]
+
   function addNumber() {
     count += 1;
     if (count > 5) {
@@ -31,6 +38,12 @@
   {:else}
     <h2>The count is zero and please hit the Add Number Button above</h2>
   {/if}
+  <!-- Render List in UI -->
+  <h3>This is the name list render method</h3>
+  <!-- unique keys can be added as below -->
+  {#each nameList as name, index (name.first)} 
+  <h4>{index}. {name.first} {name.last}</h4>
+  {/each}
 </main>
 
 <style>
