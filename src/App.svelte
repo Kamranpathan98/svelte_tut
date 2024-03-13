@@ -10,6 +10,10 @@
 
 	function addNumber() {
 		count += 1
+		if (count > 5) {
+			alert("You have reached the limits")
+			count = 0;
+		}
 	}
 </script>
 
